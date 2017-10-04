@@ -11,7 +11,7 @@ typedef struct node{
 }Node;
 
 Node *HEAD;
-Node *tree, *aux;
+Node *tree;
 Node *dequeued;
 
 void printll(Node *HEAD)
