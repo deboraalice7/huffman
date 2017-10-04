@@ -113,7 +113,7 @@ void build_tree(int *q_node)
 		{
 			tree->freq += dequeued->freq;
 			tree->right = dequeued;
-		    *q_node -=1;
+		    	*q_node -=1;
 			add_node(tree->item, tree->freq, tree->left, tree->right);	
 		
 			if( *q_node > 0)
@@ -134,7 +134,7 @@ int main()
 	HEAD = NULL;
 	FILE *in, *out;
 	char c;
-	int freq[MAX] = {0}, i, q_node = 0;
+	int freq[MAX] = {0}, i, q_node;
 
 	in = fopen("arquivo.txt", "rb");
 	out = fopen("saida.txt", "wb");
@@ -147,7 +147,8 @@ int main()
 
 	while(fread(&c,sizeof(char),1,in)!=0)
 		freq[c]++;
-
+	
+	q_node = 0;
 	for(i = 0; i < MAX; i++)
 		if(freq[i])
 		{
@@ -155,7 +156,7 @@ int main()
 			add_node(i, freq[i], NULL, NULL);
 		 } 
 
-    printll(HEAD);//imprimi a lista ordenada
+   	 printll(HEAD);//imprimi a lista ordenada
     
 	create_tree();
 	build_tree(&q_node);
