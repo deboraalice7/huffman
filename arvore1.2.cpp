@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX 257
+#define MAX 256
 
 typedef struct node{
 	char item;
