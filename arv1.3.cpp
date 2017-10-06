@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX 257
+#define MAX 256
 
 typedef struct node{
 	char item;
@@ -72,9 +72,7 @@ void print_pre_order(Node *tree)
 	if(tree != NULL)
 	{
 		printf("%c %d\n", tree->item, tree->freq);
-		//printf("|0|\n");
-		//print_pre_order(tree->left);
-		printf("|1|\n");
+		print_pre_order(tree->left);
 		print_pre_order(tree->right);
 	}
 }
@@ -132,7 +130,7 @@ int main()
 			add_node(i, freq[i], NULL, NULL);
 		 } 
 
-    printll(HEAD);//imprimi a lista ordenada
+    	printll(HEAD);//imprimi a lista ordenada
     
 	build_tree(&q_node);
 
