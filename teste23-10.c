@@ -158,7 +158,7 @@ void put(unsigned char key, unsigned char *value)
 	strcpy(new_element->value, value);
 	
 	ht->table[key] = new_element;
-	//uma hash de tam 256 È eficiente?
+	//uma hash de tam 256 √© eficiente?
 }
 
 void TraverseTree(Node *HEAD, Hashtable *ht, unsigned char *prefix)
@@ -307,7 +307,7 @@ void descompress()
 		in = fopen(name_in, "rb");
 		if(in == NULL)
 		{
-			printf("Nome inv·lido\nTente novamente\n");
+			printf("Nome inv√°lido\nTente novamente\n");
 			continue;
 		}
 		if(!verification(name_in))continue;
@@ -356,7 +356,7 @@ void compress()
 		in = fopen(name_in, "rb");
 		if(in == NULL)
 		{
-			printf("Nome inv·lido\nTente novamente\n");
+			printf("Nome inv√°lido\nTente novamente\n");
 			continue;
 		}
 		
@@ -400,7 +400,7 @@ int main()
 	while(1)
 	{
 		setlocale(LC_ALL, "Portuguese");
-		printf(" Escolha uma das opÁıes: \n");
+		printf(" Escolha uma das op√ß√µes: \n");
 		printf("  Tecle 1 para comprimir. \n");
         printf("  Tecle 2 para descomprimir.\n  ");
 
@@ -419,7 +419,7 @@ int main()
 			break;
 		}
 		else
-			printf("OpÁ„o inv·lida! Tente novamente. \n");
+			printf("Op√ß√£o inv√°lida! Tente novamente. \n");
 	}
 	
 	return 0;
