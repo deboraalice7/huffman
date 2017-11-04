@@ -61,6 +61,8 @@ void write_descompress(FILE *in, FILE *out, short int trash, Node *tree)
             }	    
         }
     }  
+	
+  //verifica o lixo, mas ta indo pro lado errado
     for(i = 7; trash <= 8; trash++, i++)
     {
     	bit_set = is_bit_i_set(c,  i);
@@ -95,6 +97,7 @@ void descompress()
     tree = NULL;
     FILE *in;
     FILE *out;
+  //nome pre definido pra teste
     in = fopen("sadia.huff", "rb");
     out = fopen("s.txt", "wb");
 
