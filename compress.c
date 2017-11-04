@@ -80,6 +80,7 @@ void compress()
 	
 	//FILE *in;
 	//FILE *out;
+	//nomde pre defino para teste, lembre q o arquivo de entrada tem q ta no mesmo lugar
 	FILE *in = fopen("ex2.txt", "rb");
 	FILE *out = fopen("sadia.huff", "wb");
 
