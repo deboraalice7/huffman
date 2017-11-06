@@ -26,12 +26,11 @@ int verification(unsigned char *nome_in);
 int is_bit_i_set(unsigned char c, int j);
 
 /* 
- * 
- * 
- *
- * 
+ *  Função: fazer descompressão
  */
 void descompress();
+    
+    
 #ifdef __cplusplus
 }
 #endif
