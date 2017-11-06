@@ -4,13 +4,6 @@
  * and open the template in the editor.
  */
 
-/* 
- * File:   node.h
- * Author: MAceio
- *
- * Created on 4 de Novembro de 2017, 07:22
- */
-
 #ifndef NODE_H
 #define NODE_H
 #define MAX 257
