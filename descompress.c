@@ -29,16 +29,10 @@ int verification(unsigned char *nome_in)//desc
     return t;
 }
 
-int is_bit_i_set(unsigned char c, int j)
-{
-	unsigned char mask = 1<<j;
-	return (mask & c);
-}
-
 void write_descompress(FILE *in, FILE *out, short int trash, Node *tree){
     Node *aux = tree;
     unsigned char c, aux1;
-    int *item ;
+    int *item;
     int i;
 
     fscanf(in, "%c", &c);
@@ -51,17 +45,17 @@ void write_descompress(FILE *in, FILE *out, short int trash, Node *tree){
             if(aux->left == NULL && aux->right == NULL)
             {
                 item = aux->item;
-                printf("A %c %d\n", *item, i);
+               // printf("A %c %d\n", *item, i);
                 fprintf(out,"%c",*item);
                 aux = tree;
             }
-
+	   //1<<i divide por 2^i e compara bit a bit com aux1
             if(aux1 & 1<<i)
                 aux = aux->right;
             else
                 aux = aux->left;
         }
-        aux1 = c;
+        aux1 = c;//recebe o caracter atual
     }
 
     for(i = 7; trash <= 8; trash++, i--)
@@ -69,7 +63,7 @@ void write_descompress(FILE *in, FILE *out, short int trash, Node *tree){
         if(aux->left == NULL && aux->right == NULL)
         {
             item = aux->item;
-            printf("B %c %d\n", *item, i);
+            //printf("B %c %d\n", *item, i);
             fprintf(out,"%c",*item);
             aux = tree;
         }
@@ -118,20 +112,20 @@ void descompress()
 	out = fopen(name_out, "wb");*/
 
     fscanf(in, "%c", &c);
-    trash = c>>5;
+    trash = c>>5;//divide 2^5
     tree_size = c & 0b00011111;
-    tree_size = tree_size << 8;
+    tree_size = tree_size << 8; // Multiplica por 2^8
     
     fscanf(in, "%c", &c);
     tree_size = c | tree_size;
 
-    printf("TRAash %d tree_size %d\n", trash, tree_size);
-
+    //printf("TRAash %d tree_size %d\n", trash, tree_size);
+	
     *freq = 0;
     tree = (Node *)rebuild_huffman_tree(in, &tree_size,freq);
 
-    printf("\nPRE\n");
-    print_pre_order(tree);
+    //printf("\nPRE\n");
+    //print_pre_order(tree);
     //printf("Ok\n");
     if(trash == 0)trash = 8;
     write_descompress(in, out, trash, tree);
