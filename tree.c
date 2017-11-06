@@ -137,7 +137,6 @@ void* rebuild_huffman_tree(FILE *in, short int *tree_size,  void *freq)
         	fprintf(in,"%c", *c);
 		*c = '\\';
             }
-            else condition = 0;
 	}
 		
 	Node *tree = (Node *)set_node(tree, c, freq);
