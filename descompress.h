@@ -4,13 +4,6 @@
  * and open the template in the editor.
  */
 
-/* 
- * File:   descompress.h
- * Author: MAceio
- *
- * Created on 4 de Novembro de 2017, 07:21
- */
-
 #ifndef DESCOMPRESS_H
 #define DESCOMPRESS_H
 #include "node.h"
@@ -21,7 +14,11 @@
 extern "C" {
 #endif
     
-
+/*
+ * Função: verificar se o arquivo tem extensão .huff
+ * Recebe: string com node de entrada
+ * Retorna: 1 se
+ */
 int verification(unsigned char *nome_in);
 int is_bit_i_set(unsigned char c, int j);
 
