@@ -4,13 +4,6 @@
  * and open the template in the editor.
  */
 
-/* 
- * File:   compress.h
- * Author: MAceio
- *
- * Created on 4 de Novembro de 2017, 07:17
- */
-
 #ifndef COMPRESS_H
 #define COMPRESS_H
 #include "node.h"
@@ -25,10 +18,24 @@
 extern "C"{
 #endif
 
-void compress();
+/*
+ * Função: adicionar bit
+ * Recebe: caracter e posição
+ * Retorna: caracter
+ */
 unsigned char add_bit(unsigned char c_saida, short int pos);
+  
+/*
+ * Função: escrever no arquivo de saída a compressão
+ * Recebe: arquivos de entrada e saída, tamanho da árvore e árvore 
+ */
 void write_compress(FILE *in, FILE *out, short int tree_size, Hashtable *ht, Node* tree);
 
+ /*
+  * Função: executar compressão
+  */
+void compress();
+  
 #ifdef __cplusplus
 }
 #endif
