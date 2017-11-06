@@ -38,7 +38,7 @@ void* set_node(Node *l, void* item, void *freq);
 
 	
 /*
- * Função: adicionar no na lista
+ * Função: adicionar nó na lista
  * Recebe: nó da cabeça da lista e o novo nó
  * Retorna: endereço do nó da cabeça da lista
  */
