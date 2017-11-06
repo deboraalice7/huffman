@@ -47,9 +47,9 @@ void* rebuild_huffman_tree(FILE *in, short int *tree_size,  void *freq);
 
   /*
    * Função: inserir na hashtable os bits de cada caracter
-   * Recebe: no, ponteiro do tamanho da árvore, 
+   * Recebe: no, ponteiro do tamanho da árvore, string e a hashtable
    * observação: incrementa tamanho de árvore ao percorrê-la
-   * 
+   * Retorna: hashtable
    */
 void* TraverseTree(Node *HEAD, short int *tree_size, unsigned char *prefix, int position, Hashtable *ht);
   
