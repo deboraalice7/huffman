@@ -4,13 +4,6 @@
  * and open the template in the editor.
  */
 
-/* 
- * File:   hashtable.h
- * Author: MAceio
- *
- * Created on 4 de Novembro de 2017, 07:26
- */
-
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 #define MAX 257
