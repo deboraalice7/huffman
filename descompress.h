@@ -17,11 +17,10 @@ extern "C" {
 /*
  * Função: verificar se o arquivo tem extensão .huff
  * Recebe: string com node de entrada
- * Retorna: 1 se
+ * Retorna: 1 se estiver compactado e 0 caso contrário
  */
 int verification(unsigned char *nome_in);
-int is_bit_i_set(unsigned char c, int j);
-
+    
 /* 
  *  Função: fazer descompressão
  */
