@@ -1,4 +1,3 @@
-
 #ifndef HEAP_H
 #define HEAP_H
 
@@ -22,14 +21,13 @@ typedef struct Heap Heap;
  * Função: createHeap
  * ----------------------------
  *   capacity: inteiro de capacidade máxima
- *   heapType: char com o tipo da heap
  *
  *   retorna: Heap* de uma heap criada.
  */
-Heap* createHeap(int capacity, char heapType);
+Heap* createHeap(int capacity);
 
 /*
- * Função: enqueueHeap
+ * Function: enqueueHeap
  * ----------------------------
  *   heap: Heap* para ser enfileirada
  *   item: inteiro a ser infilerado na heap 
@@ -40,7 +38,7 @@ Heap* createHeap(int capacity, char heapType);
 int enqueueHeap(Heap *heap, int item);
 
 /*
- * Função: getParentIndex
+ * Function: getParentIndex
  * ----------------------------
  *   heap: Heap* para pegar o parente
  *   i: inteiro para pega o índice
@@ -51,7 +49,7 @@ int enqueueHeap(Heap *heap, int item);
 int getParentIndex(Heap *heap, int i);
 
 /*
- * Função: getLeftIndex
+ * Function: getLeftIndex
  * ----------------------------
  *   heap: Heap* para pegar o parente
  *   i: inteiro para pega o índice
@@ -62,7 +60,7 @@ int getParentIndex(Heap *heap, int i);
 int getLeftIndex(Heap *heap, int i);
 
 /*
- * Função: getRightIndex
+ * Function: getRightIndex
  * ----------------------------
  *    heap: Heap* para pegar o parente
  *    i: inteiro para pega o índice
@@ -72,7 +70,7 @@ int getLeftIndex(Heap *heap, int i);
 int getRightIndex(Heap *heap, int i);
 
 /*
- * Função: frontHeap
+ * Function: frontHeap
  * ----------------------------
  *   heap: Heap* para pegar a cabeça
  *
@@ -81,7 +79,7 @@ int getRightIndex(Heap *heap, int i);
 int frontHeap(Heap *heap);
 
 /*
- * Função: isHeapEmpty
+ * Function: isHeapEmpty
  * ----------------------------
  *   heap: Heap* a ser checada
  *
@@ -91,7 +89,7 @@ int frontHeap(Heap *heap);
 bool isHeapEmpty(Heap *heap);
 
 /*
- * Função: heapify
+ * Function: heapify
  * ----------------------------
  *   heap: Heap* para criar a heapify
  *   i: inteiro onde começa a heapify
@@ -102,7 +100,7 @@ bool isHeapEmpty(Heap *heap);
 void heapify(Heap *heap, int i, int *compares);
 
 /*
- * Função: itemOf
+ * Function: itemOf
  * ----------------------------
  *   heap: Heap* a ser pega 
  *   i: índice inteiro a ser pego 
@@ -112,7 +110,7 @@ void heapify(Heap *heap, int i, int *compares);
 int itemOf(Heap *heap, int i);
 
 /*
- * Função: heapSort
+ * Function: heapSort
  * ----------------------------
  *   heap: Heap* a ser ordenada
  *   
@@ -121,7 +119,7 @@ int itemOf(Heap *heap, int i);
 void heapSort(Heap *heap);
 
 /*
- * Função: dequeueHeap
+ * Function: dequeueHeap
  * ----------------------------
  *   heap: Heap* a ser desenfilerada 
  *   
@@ -130,7 +128,7 @@ void heapSort(Heap *heap);
 int dequeueHeap(Heap *heap);
 
 /*
- * Função: destroyHeap
+ * Function: destroyHeap
  * ----------------------------
  *   heap: Heap* para liberar a memória   
  *   
@@ -145,3 +143,4 @@ void destroyHeap(Heap *heap);
 #endif
 
 #endif /* HEAP_H */
+

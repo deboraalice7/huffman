@@ -3,15 +3,13 @@
 struct Heap {
   int size;
   int capacity;
-  char heapType;
   int *item;
 };
 
-Heap* createHeap(int capacity, char heapType) {
+Heap* createHeap(int capacity) {
   Heap *temp = (Heap*) malloc(1 * sizeof(Heap));
   temp->size = 0;
   temp->capacity = capacity;
-  temp->heapType = heapType;
   temp->item = (int*) malloc((capacity + 1) * sizeof(int));
   return(temp);
 }
@@ -20,13 +18,6 @@ void swap(int *a, int *b) {
   int aux = *a;
   *a = *b;
   *b = aux;
-}
-
-bool compareHeapWithType(int a, int b, char heapType) {
-  if (heapType == '+')
-    return(a > b);
-  else // (heapType == '-')
-    return(a < b);
 }
 
 int enqueueHeap(Heap *heap, int item) {
@@ -40,7 +31,7 @@ int enqueueHeap(Heap *heap, int item) {
     int keyIndex = heap->size;
     int parentIndex = getParentIndex(heap, heap->size);
 
-    while ((compares ++) && parentIndex >= 1 && compareHeapWithType(heap->item[keyIndex], heap->item[parentIndex], heap->heapType))
+    while ((compares ++) && parentIndex >= 1 && heap->item[keyIndex] > heap->item[parentIndex])
     {
       swap(&heap->item[keyIndex], &heap->item[parentIndex]);
 
@@ -99,12 +90,12 @@ void heapify(Heap *heap, int i, int *compares) {
   int leftIndex = getLeftIndex(heap, i);
   int rightIndex = getRightIndex(heap, i);
 
-  if (leftIndex <= heap->size && compareHeapWithType(heap->item[leftIndex], heap->item[i], heap->heapType))
+  if (leftIndex <= heap->size && heap->item[leftIndex] > heap->item[i])
     largest = leftIndex;
   else
     largest = i;
 
-  if (rightIndex <= heap->size && compareHeapWithType(heap->item[rightIndex], heap->item[largest], heap->heapType))
+  if (rightIndex <= heap->size && heap->item[rightIndex] > heap->item[largest])
     largest = rightIndex;
 
   if (heap->item[i] != heap->item[largest])
